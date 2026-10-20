@@ -8,27 +8,28 @@ int Time_converter() {
     //Get the old time
     printf("Enter a 24-hour time: ");
     fgets(time, sizeof(time), stdin);
-    for (int i = 0; i < 6; i++) {
-        time[i] -= '0';
-    }
-    printf("%s\n", time);
-    if (time[0] == 1 && time[1] > 3) {
-        --time[0];
+    //Normally would convert the char into actual integers, trying something...
+    // for (int i = 0; i < 6; i++) {
+    //     time[i] -= '0';
+    // }
+    printf("Testing: %s\n", time);
+    if (time[0] == '1' && time[1] > '3') {
+        time[0] = '0';
         time[1] = time[1] - 2;
         printf("Equivalent 12-hour time: %s\n PM", time);
     }
-    else if (time[0] == 2 && time[1] < 2) {
-        --time[0];
-        if (time[1] == 0) {
-            time[1] = 8;
+    else if (time[0] == '2' && time[1] < '2') {
+        time[0] = '0';
+        if (time[1] == '0') {
+            time[1] = '8';
         }
         else {
-            time[1] = 9;
+            time[1] = '9';
         }
         printf("Equivalent 12-hour time: %s\n PM", time);
     }
-    else if (time[0] == 2 && time[1] >= 2) {
-        --time[0];
+    else if (time[0] == '2' && time[1] >= '2') {
+        time[0] = '1';
         time[1] = time[1] - 2;
         printf("Equivalent 12-hour time: %s\n PM", time);
     }
