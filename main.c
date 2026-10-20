@@ -16,7 +16,7 @@ int Time_converter() {
     if (time[0] == '1' && time[1] > '3') {
         time[0] = '0';
         time[1] = time[1] - 2;
-        printf("Equivalent 12-hour time: %s\n PM", time);
+        printf("Equivalent 12-hour time: %s PM\n", time);
     }
     else if (time[0] == '2' && time[1] < '2') {
         time[0] = '0';
@@ -26,15 +26,15 @@ int Time_converter() {
         else {
             time[1] = '9';
         }
-        printf("Equivalent 12-hour time: %s\n PM", time);
+        printf("Equivalent 12-hour time: %s PM \n", time);
     }
     else if (time[0] == '2' && time[1] >= '2') {
         time[0] = '1';
         time[1] = time[1] - 2;
-        printf("Equivalent 12-hour time: %s\n PM", time);
+        printf("Equivalent 12-hour time: %s PM \n ", time);
     }
     else {
-        printf("Equivalent 12-hour time: %s\n AM", time);
+        printf("Equivalent 12-hour time: %s AM \n", time);
     }
 }
 
